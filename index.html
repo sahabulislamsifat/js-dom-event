@@ -6,7 +6,25 @@
     <title>JS DOM EVENT</title>
   </head>
   <body>
-    <h1>Ajke Dom er special day!</h1>
+    <h1 onclick="console.log('This is Event from DOM')">
+      Ajke Dom er special day!
+    </h1>
+    <button onclick="console.log(7)">Click ME</button>
+    <button title="What is DOM" onclick="console.log(14)">Click</button>
+    <button onclick="console.log(80)">Another Click</button>
+    <br />
+    <br />
+    <button onclick="document.body.style.backgroundColor='yellow'">
+      Make Yellow
+    </button>
+    <button onclick="makeRed()">Make Red</button>
+    <button id="make-blue">Make Blue</button>
+    <button id="make-purple">Make Purple</button>
+
     <script src="./JS/event.js"></script>
+
+    <script>
+        
+    </script>
   </body>
 </html>
