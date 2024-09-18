@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add New Comment</title>
+  </head>
+  <body>
+    <div id="comment-container">
+      <h1>Please Add Your Valuable Comment</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat rerum
+        quaerat in similique vitae ratione. Ipsa, veniam? Assumenda fugiat
+        nostrum aspernatur quo sapiente incidunt quis laboriosam totam, maiores
+        in tenetur aperiam expedita. Quos eveniet magnam est distinctio, rerum
+        et quam dolores ipsam aliquam ad voluptates velit perferendis deleniti
+        modi voluptas perspiciatis veritatis placeat doloribus. Quam, nemo
+        excepturi? Alias, aliquam quasi.
+      </p>
+      <p>
+        Qui harum debitis, molestiae nam modi non labore reprehenderit atque
+        delectus voluptatem, officia eius ad quaerat deleniti repudiandae porro
+        quibusdam adipisci ea architecto ab ullam ex distinctio? Debitis
+        reprehenderit dolore accusantium, itaque, ea soluta sint qui odit
+        facilis molestiae quos repudiandae fugit ratione quia? Quasi doloremque
+        accusantium vero perferendis sit ad veritatis veniam quos? Fugiat porro
+        officia nobis nam molestias?
+      </p>
+      <p>
+        Nulla, perspiciatis nam provident laboriosam alias molestias vero ipsa
+        incidunt voluptatibus distinctio harum vitae itaque sint, amet tempore
+        adipisci ex veritatis doloremque ipsum quasi natus possimus cupiditate
+        soluta. Quaerat repellendus illum dolore. In delectus, vero reiciendis
+        vel explicabo, iusto blanditiis possimus expedita, porro impedit qui
+        quam fugiat molestiae quas culpa exercitationem animi dolorum. Veritatis
+        quas voluptas inventore tempora et dolor!
+      </p>
+      <p>
+        Minima voluptatem animi quasi temporibus repudiandae perferendis earum
+        nihil dolorem eius excepturi inventore asperiores praesentium esse,
+        incidunt doloribus aliquid deleniti velit voluptatum est laborum culpa
+        rerum, commodi eligendi! Explicabo debitis, in nisi nemo, quo molestiae
+        numquam accusamus, quod repellat libero repellendus. Blanditiis vel
+        incidunt praesentium consectetur porro possimus ipsam illo, aperiam sed
+        architecto, soluta vero, esse at nemo maiores labore.
+      </p>
+    </div>
+    <div>
+      <textarea name="" id="new-comment" rows="5" cols="60"></textarea>
+      <br />
+      <button id="btn-post">Post</button>
+    </div>
+
+    <script>
+      // Step 01: addEventListener to the post button
+      document
+        .getElementById("btn-post")
+        .addEventListener("click", function () {
+          // Setp 02: Get the Comment Box
+          const commentBox = document.getElementById("new-comment");
+          const newComment = commentBox.value;
+
+          // Step 03: Set the comment inside the contrainer
+          // 1. get the comment container
+          // 2. create a new element (p tag)
+          // 3. set the text of the comment as a innerText of the p tag
+          // 4. add the p tag using appendChild
+          const commentContainer = document.getElementById("comment-container");
+          const p = document.createElement("p");
+          p.innerText = newComment;
+          commentContainer.appendChild(p);
+          newComment.value = "";
+
+          // Setp 04. Clear the text area
+          commentBox.value = "";
+        });
+    </script>
+  </body>
+</html>
