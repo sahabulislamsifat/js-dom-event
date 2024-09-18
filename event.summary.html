@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Summary of DOM Event</title>
+  </head>
+  <body>
+    <h1>Final DOM Event Summary</h1>
+    <h3 id="handler-status">Default Text</h3>
+    <button onclick="handleOnClick()">
+      Handle Event by Add Onclick Function
+    </button>
+    <button id="event-listener">Handle event by addEventListener</button>
+    <br />
+    <br />
+    <h3 id="input-text-display">Default Input Text</h3>
+    <input id="input-field" type="text" />
+    <button id="btn-update">Update</button>
+    <br />
+
+    <h3 id="complain-box">Complain Box</h3>
+    <input id="complain-field" type="text" />
+    <button id="complain-submit">Submit</button>
+
+    <script>
+      function handleOnClick() {
+        const handlerStatus = document.getElementById("handler-status");
+        handlerStatus.innerText =
+          "Handle by function attached on click attribute";
+      }
+
+      //Option 2:
+      document
+        .getElementById("event-listener")
+        .addEventListener("click", function () {
+          const handlerStatus = document.getElementById("handler-status");
+          handlerStatus.innerText = "Text Updated by addEventListener Button";
+        });
+
+      //Option 2 : Recapture
+      document
+        .getElementById("btn-update")
+        .addEventListener("click", function () {
+          const inputField = document.getElementById("input-field");
+          const inputText = inputField.value;
+
+          const text = document.getElementById("input-text-display");
+          text.innerText = inputText;
+          inputField.value = "";
+        });
+
+      document
+        .getElementById("complain-submit")
+        .addEventListener("click", function () {
+          const complainField = document.getElementById("complain-field");
+          const ComplainText = complainField.value;
+
+          const complain = document.getElementById("complain-box");
+          complain.innerText = ComplainText;
+          complainField.value = "";
+        });
+    </script>
+  </body>
+</html>
