@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Bubble Delegate</title>
+  </head>
+  <body>
+    <main>
+      <section>
+        <h1>Exploring Event Bubble Delegate</h1>
+        <ul id="parent-container">
+          <li class="item">Lorem, ipsum dolor.</li>
+          <li class="item">Fuga, asperiores earum!</li>
+          <li class="item">Enim, eius nam.</li>
+          <li class="item">Architecto, repellat obcaecati.</li>
+          <li class="item">A, iure exercitationem!</li>
+          <li class="item">Quis, eius sapiente.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script>
+      const items = document.getElementsByClassName("item");
+      for (const item of items) {
+        item.addEventListener("click", function (event) {
+          event.target.parentChild.removeChild("event.target");
+        });
+      }
+    </script>
+  </body>
+</html>
