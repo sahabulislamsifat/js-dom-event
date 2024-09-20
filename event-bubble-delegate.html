@@ -9,7 +9,7 @@
     <main>
       <section>
         <h1>Exploring Event Bubble Delegate</h1>
-        <ul id="parent-container">
+        <ul id="list-container">
           <li class="item">Lorem, ipsum dolor.</li>
           <li class="item">Fuga, asperiores earum!</li>
           <li class="item">Enim, eius nam.</li>
@@ -17,16 +17,36 @@
           <li class="item">A, iure exercitationem!</li>
           <li class="item">Quis, eius sapiente.</li>
         </ul>
+        <button id="btn-item">Add Item</button>
       </section>
     </main>
 
     <script>
-      const items = document.getElementsByClassName("item");
-      for (const item of items) {
-        item.addEventListener("click", function (event) {
-          event.target.parentChild.removeChild("event.target");
+      // const items = document.getElementsByClassName("item");
+      // for (const item of items) {
+      //   item.addEventListener("click", function (event) {
+      //     // console.log(event.target);
+      //     event.target.parentNode.removeChild(event.target);
+      //   });
+      // }
+
+      document
+        .getElementById("list-container")
+        .addEventListener("click", function (event) {
+          // console.log(event.target);
+          event.target.parentNode.removeChild(event.target);
         });
-      }
+
+      document
+        .getElementById("btn-item")
+        .addEventListener("click", function () {
+          const liContainer = document.getElementById("list-container");
+
+          const li = document.createElement("li");
+          li.innerText = "Brand New Item Added";
+          li.classList.add("item");
+          liContainer.appendChild(li);
+        });
     </script>
   </body>
 </html>
